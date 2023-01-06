@@ -6,16 +6,22 @@ class MobileBox extends StatelessWidget {
   final String headText;
   final String bodyText;
   final IconData icon;
+  final String routeName;
 
-  MobileBox(this.color, this.headText, this.bodyText, this.icon);
+  MobileBox(
+      this.color, this.headText, this.bodyText, this.icon, this.routeName);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).pushNamed(routeName);
+        },
         child: Container(
             decoration: BoxDecoration(
-                color: color == 'blue' ? Colors.blue : Colors.white,
+                color: color == 'blue'
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).accentColor,
                 borderRadius: BorderRadius.all(Radius.circular(15.r)),
                 boxShadow: [
                   BoxShadow(
@@ -35,12 +41,16 @@ class MobileBox extends StatelessWidget {
                       width: 50.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: color == 'blue' ? Colors.white : Colors.blue,
+                        color: color == 'blue'
+                            ? Theme.of(context).accentColor
+                            : Theme.of(context).primaryColor,
                       ),
                       child: Icon(
                         icon,
                         size: 35.sp,
-                        color: color == 'blue' ? Colors.blue : Colors.white,
+                        color: color == 'blue'
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).accentColor,
                       ),
                       alignment: Alignment.center,
                     ),
@@ -50,15 +60,20 @@ class MobileBox extends StatelessWidget {
                     Text(
                       headText,
                       style: TextStyle(
-                          color: color == 'blue' ? Colors.white : Colors.blue,
-                          fontSize: 18.h,
+                          color: color == 'blue'
+                              ? Theme.of(context).accentColor
+                              : Theme.of(context).primaryColor,
+                          fontSize: 18.sp,
+                          fontFamily: 'Roboto',
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       bodyText,
                       style: TextStyle(
                           fontSize: 13.sp,
-                          color: color == 'blue' ? Colors.white : Colors.blue),
+                          color: color == 'blue'
+                              ? Theme.of(context).accentColor
+                              : Theme.of(context).primaryColor),
                     )
                   ]),
             )));

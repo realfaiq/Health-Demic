@@ -23,7 +23,7 @@ class SignUpScreen extends StatelessWidget {
               TextFormField(
                   decoration: const InputDecoration(
                       hintText: 'Full Name', prefixIcon: Icon(Icons.person)),
-                  style: TextStyle(fontSize: 18.sp)),
+                  style: Theme.of(context).textTheme.titleMedium),
               SizedBox(
                 height: 13.h,
               ),
@@ -33,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
                     prefixIcon: Icon(
                       Icons.email,
                     )),
-                style: TextStyle(fontSize: 18.sp),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(
                 height: 13.h,
@@ -44,7 +44,7 @@ class SignUpScreen extends StatelessWidget {
                     prefixIcon: Icon(
                       Icons.lock,
                     )),
-                style: TextStyle(fontSize: 18.sp),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(
                 height: 13.h,
@@ -55,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                     prefixIcon: Icon(
                       Icons.lock,
                     )),
-                style: TextStyle(fontSize: 18.sp),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(
                 height: 10.h,
@@ -68,15 +68,18 @@ class SignUpScreen extends StatelessWidget {
                   },
                   child: Text(
                     'Sign Up',
-                    style: TextStyle(fontSize: 18.sp),
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 18.sp,
+                        color: Theme.of(context).accentColor),
                   ),
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
-                          EdgeInsets.symmetric(vertical: 11.sp)),
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
+                          EdgeInsets.symmetric(vertical: 15.sp)),
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).accentColor),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).primaryColor),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25.sp)))),

@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/Mobile_Box.dart';
 import '../../widgets/Tab_Box.dart';
 import '../../widgets/Drawer.dart';
+import '../Patient/mild_Diseases_Screen.dart';
+import '../Patient/specific_Diseases_Screen.dart';
 
 class PatientHomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -18,7 +20,7 @@ class PatientHomeScreen extends StatelessWidget {
         title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
             'Welcome Emily Rose!',
-            style: TextStyle(color: Colors.black, fontSize: 18.sp),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
             width: 10.w,
@@ -49,15 +51,19 @@ class PatientHomeScreen extends StatelessWidget {
               childAspectRatio: 2 / 2,
               children: [
                 MobileBox('blue', 'Book an Appointment', 'Appoint best Doctors',
-                    Icons.person),
-                MobileBox('white', 'Get Medicine Recommendation',
-                    'Suggestion about Medicine', Icons.medication),
-                MobileBox('white', 'Manage Medical Profiles',
-                    'Manage your Profiles', Icons.manage_accounts),
-                MobileBox('blue', 'Manage Appointments',
-                    'Manage Your Appointments', Icons.manage_accounts),
-                MobileBox('blue', 'Find a Medicine',
-                    'Track your medicines in pharmacies', Icons.search),
+                    Icons.person, SpecificDiseasesScreen.routeName),
+                MobileBox(
+                    'white',
+                    'Get Medicine Recommendation',
+                    'Suggestion about Medicine',
+                    Icons.medication,
+                    MildDiseaseScreen.routeName),
+                // MobileBox('white', 'Manage Medical Profiles',
+                //     'Manage your Profiles', Icons.manage_accounts),
+                // MobileBox('blue', 'Manage Appointments',
+                //     'Manage Your Appointments', Icons.manage_accounts),
+                // MobileBox('blue', 'Find a Medicine',
+                //     'Track your medicines in pharmacies', Icons.search),
               ],
             );
           } else {

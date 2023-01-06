@@ -26,7 +26,7 @@ class LogInScreen extends StatelessWidget {
                     hintText: 'Enter your Email',
                     prefixIcon: Icon(Icons.email),
                   ),
-                  style: TextStyle(fontSize: 18.sp),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 SizedBox(
                   height: 13.h,
@@ -37,7 +37,7 @@ class LogInScreen extends StatelessWidget {
                       prefixIcon: Icon(
                         Icons.lock,
                       )),
-                  style: TextStyle(fontSize: 18.sp),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 SizedBox(
                   height: 15.h,
@@ -51,14 +51,18 @@ class LogInScreen extends StatelessWidget {
                     },
                     child: Text(
                       'Log In',
+                      style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 18.sp,
+                          color: Theme.of(context).accentColor),
                     ),
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
-                            EdgeInsets.symmetric(vertical: 11.sp)),
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.blue),
+                            EdgeInsets.symmetric(vertical: 15.sp)),
+                        foregroundColor: MaterialStateProperty.all<Color>(
+                            Theme.of(context).accentColor),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Theme.of(context).primaryColor),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -72,7 +76,7 @@ class LogInScreen extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       'Forgetten Password?',
-                      style: TextStyle(fontSize: 18.sp),
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                     style: ButtonStyle(
                       overlayColor: MaterialStateColor.resolveWith(
@@ -90,7 +94,7 @@ class LogInScreen extends StatelessWidget {
               children: [
                 Text(
                   'Don\'t have an Account?',
-                  style: TextStyle(fontSize: 18.sp),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 TextButton(
                   onPressed: () {
@@ -99,7 +103,7 @@ class LogInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(25.r),
                                 topRight: Radius.circular(25.r))),
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Theme.of(context).primaryColor,
                         context: context,
                         builder: (BuildContext context) {
                           return Container(
@@ -117,7 +121,7 @@ class LogInScreen extends StatelessWidget {
                                       'Sign Up as Patient',
                                       style: TextStyle(
                                           fontSize: 25.sp,
-                                          color: Colors.white,
+                                          color: Theme.of(context).accentColor,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     style: TextButton.styleFrom(
@@ -128,12 +132,12 @@ class LogInScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Divider(
-                                    color: Colors.white,
+                                    color: Theme.of(context).accentColor,
                                   ),
                                   Text(
                                     'Cannot Sign Up as Doctor',
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Theme.of(context).accentColor,
                                         fontSize: 25.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -142,7 +146,8 @@ class LogInScreen extends StatelessWidget {
                                     child: Text(
                                       'Because of Authenticity reasons we prefer that doctors do not Sign Up directly. In order to Sign Up as Doctor. Contact us at ahmadfaiq46@gmail.com or abdurrehman1112@gmail.com. Our team will reach to you ASAP!',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15.sp),
+                                          color: Theme.of(context).accentColor,
+                                          fontSize: 15.sp),
                                     ),
                                   )
                                 ]),
@@ -151,7 +156,7 @@ class LogInScreen extends StatelessWidget {
                   },
                   child: Text(
                     'Sign Up',
-                    style: TextStyle(fontSize: 18.sp),
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                   style: ButtonStyle(
                     overlayColor: MaterialStateColor.resolveWith(

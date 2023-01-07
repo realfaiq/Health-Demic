@@ -34,11 +34,36 @@ class SpecificDiseasesScreen extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          DiseaseBox('Heart Diseases'),
-          DiseaseBox('Lung Disease'),
-          DiseaseBox('Kidney Diseases'),
-          DiseaseBox('Liver Diseases'),
-          DiseaseBox('Psychatrist'),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
+            },
+            child: DiseaseBox('Heart Diseases'),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
+            },
+            child: DiseaseBox('Lung Diseases'),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
+            },
+            child: DiseaseBox('Kideny Diseases'),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
+            },
+            child: DiseaseBox('Liver Diseases'),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
+            },
+            child: DiseaseBox('Pyschatrist'),
+          ),
         ]));
   }
 }

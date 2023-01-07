@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../screens/Patient/doctor_recommender_Screen.dart';
+import '../screens/Patient/doctor_Recommender_Screen.dart';
 
 class DiseaseBox extends StatelessWidget {
   final String diseaseName;

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:health_demic/screens/Patient/doctor_recommender_Screen.dart';
+import 'package:health_demic/screens/Patient/doctor_Recommender_Screen.dart';
+import 'package:health_demic/screens/Patient/find_a_Medicine_Screen.dart';
 import 'screens/Common/log_In_Screen.dart';
 import 'screens/Common/sign_up_Screen.dart';
 import 'screens/Patient/home_Screen.dart';
 import 'screens/Patient/mild_Diseases_Screen.dart';
 import 'screens/Patient/specific_Diseases_Screen.dart';
-import 'screens/Patient/specific_Diseases_Screen.dart';
+import 'screens/Patient/doctor_Details_Screen.dart';
+import 'screens/Patient/doctor_Confirmation_Screen.dart';
+import 'screens/Patient/manage_Medical_Profiles.dart';
+import 'screens/Patient/manage_Appointments_Screen.dart';
+import 'screens/Patient/doctor_Recommender_Screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -50,6 +55,14 @@ class MyApp extends StatelessWidget {
                   SpecificDiseasesScreen(),
               DoctorRecommenderScreen.routeName: (context) =>
                   DoctorRecommenderScreen(),
+              DoctorDetailsScreen.routeName: (context) => DoctorDetailsScreen(),
+              DoctorConfirmationScreen.routeName: (context) =>
+                  DoctorConfirmationScreen(),
+              ManageMedicalProfilesScreen.routeName: (context) =>
+                  ManageMedicalProfilesScreen(),
+              ManageAppointmentsScreen.routeName: (context) =>
+                  ManageAppointmentsScreen(),
+              FindAMedicineScreen.routeName: (context) => FindAMedicineScreen(),
             },
           );
         });

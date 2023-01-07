@@ -6,13 +6,16 @@ class TabBox extends StatelessWidget {
   final String headText;
   final String bodyText;
   final IconData icon;
+  final String routeName;
 
-  TabBox(this.color, this.headText, this.bodyText, this.icon);
+  TabBox(this.color, this.headText, this.bodyText, this.icon, this.routeName);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).pushNamed(routeName);
+        },
         child: Container(
             decoration: BoxDecoration(
                 color: color == 'blue' ? Colors.blue : Colors.white,

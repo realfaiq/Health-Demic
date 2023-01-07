@@ -5,6 +5,9 @@ import '../../widgets/Tab_Box.dart';
 import '../../widgets/Drawer.dart';
 import '../Patient/mild_Diseases_Screen.dart';
 import '../Patient/specific_Diseases_Screen.dart';
+import '../Patient/manage_Medical_Profiles.dart';
+import '../Patient/manage_Appointments_Screen.dart';
+import '../Patient/find_a_Medicine_Screen.dart';
 
 class PatientHomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -58,12 +61,24 @@ class PatientHomeScreen extends StatelessWidget {
                     'Suggestion about Medicine',
                     Icons.medication,
                     MildDiseaseScreen.routeName),
-                // MobileBox('white', 'Manage Medical Profiles',
-                //     'Manage your Profiles', Icons.manage_accounts),
-                // MobileBox('blue', 'Manage Appointments',
-                //     'Manage Your Appointments', Icons.manage_accounts),
-                // MobileBox('blue', 'Find a Medicine',
-                //     'Track your medicines in pharmacies', Icons.search),
+                MobileBox(
+                    'white',
+                    'Manage Medical Profiles',
+                    'Manage your Profiles',
+                    Icons.manage_accounts,
+                    ManageMedicalProfilesScreen.routeName),
+                MobileBox(
+                    'blue',
+                    'Manage Appointments',
+                    'Manage Your Appointments',
+                    Icons.manage_accounts,
+                    ManageAppointmentsScreen.routeName),
+                MobileBox(
+                    'blue',
+                    'Find a Medicine',
+                    'Track your medicines in pharmacies',
+                    Icons.search,
+                    FindAMedicineScreen.routeName),
               ],
             );
           } else {
@@ -76,15 +91,31 @@ class PatientHomeScreen extends StatelessWidget {
               childAspectRatio: 2 / 2,
               children: [
                 TabBox('blue', 'Book an Appointment', 'Appoint best Doctors',
-                    Icons.person),
-                TabBox('white', 'Get Medicine Recommendation',
-                    'Suggestion about Medicine', Icons.medication),
-                TabBox('white', 'Manage Medical Profiles',
-                    'Manage your Profiles', Icons.manage_accounts),
-                TabBox('blue', 'Manage Appointments',
-                    'Manage Your Appointments', Icons.manage_accounts),
-                TabBox('blue', 'Find a Medicine',
-                    'Track your medicines in pharmacies', Icons.search),
+                    Icons.person, SpecificDiseasesScreen.routeName),
+                TabBox(
+                    'white',
+                    'Get Medicine Recommendation',
+                    'Suggestion about Medicine',
+                    Icons.medication,
+                    MildDiseaseScreen.routeName),
+                TabBox(
+                    'white',
+                    'Manage Medical Profiles',
+                    'Manage your Profiles',
+                    Icons.manage_accounts,
+                    ManageMedicalProfilesScreen.routeName),
+                TabBox(
+                    'blue',
+                    'Manage Appointments',
+                    'Manage Your Appointments',
+                    Icons.manage_accounts,
+                    ManageAppointmentsScreen.routeName),
+                TabBox(
+                    'blue',
+                    'Find a Medicine',
+                    'Track your medicines in pharmacies',
+                    Icons.search,
+                    FindAMedicineScreen.routeName),
               ],
             );
           }

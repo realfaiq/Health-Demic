@@ -1,18 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../screens/Patient/doctor_Recommender_Screen.dart';
+import '../../screens/Patient/medicine_Recommendation_Screen.dart';
 
-class DiseaseBox extends StatelessWidget {
+class MildDiseaseBox extends StatelessWidget {
   final String diseaseName;
-  // final String routeName;
+  final String medicationName;
+  final String above15AgeGroup;
+  final String below15AgeGroup;
+  final String adultsDosage;
+  final String childrenDosage;
+  final String recommendedBy;
 
-  DiseaseBox(this.diseaseName);
+  MildDiseaseBox(
+      this.diseaseName,
+      this.medicationName,
+      this.above15AgeGroup,
+      this.below15AgeGroup,
+      this.adultsDosage,
+      this.childrenDosage,
+      this.recommendedBy);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(DoctorRecommenderScreen.routeName);
+        Navigator.of(context)
+            .pushNamed(MedicineRecommendationScreen.routeName, arguments: {
+          'diseaseName': diseaseName,
+          'medicationName': medicationName,
+          'above15AgeGroup': above15AgeGroup,
+          'below15AgeGroup': below15AgeGroup,
+          'adultsDosage': adultsDosage,
+          'childrenDosage': childrenDosage,
+          'recommendedBy': recommendedBy,
+        });
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.w),

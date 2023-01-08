@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/Disease_Box.dart';
+import '../../widgets/Patient Widgets/Mild_Disease_Box.dart';
 
 class MildDiseaseScreen extends StatelessWidget {
   const MildDiseaseScreen({super.key});
@@ -34,12 +34,66 @@ class MildDiseaseScreen extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          DiseaseBox('Fever'),
-          DiseaseBox('Cough'),
-          DiseaseBox('Flu'),
-          DiseaseBox('Headache'),
-          DiseaseBox('Skin Burn'),
-          DiseaseBox('Cuts'),
+          Container(
+            child: MildDiseaseBox(
+                'Fever',
+                'Panadol',
+                'Above 15 Tablets',
+                'Below 15 Syrup',
+                '3 tablets for Adults Morning Evening and Night.',
+                '3 tea Spoons for children Morning Evening and Night.',
+                'Doctor.Ali Akbar'),
+          ),
+          Container(
+            child: MildDiseaseBox(
+                'Cough',
+                'Levixon',
+                'Above 15 Tablets',
+                'Below 15 Syrup',
+                '3 tablets for Adults Morning Evening and Night.',
+                '3 tea Spoons for children Morning Evening and Night.',
+                'Doctor. Asghar Khan'),
+          ),
+          Container(
+            child: MildDiseaseBox(
+                'Flu',
+                'Tea Time',
+                'Above 15 Tablets',
+                'Below 15 Syrup',
+                '3 tablets for Adults Morning Evening and Night.',
+                '3 tea Spoons for children Morning Evening and Night.',
+                'Doctor.Ali Akbar'),
+          ),
+          Container(
+            child: MildDiseaseBox(
+                'Headache',
+                'Desprine',
+                'Above 15 Tablets',
+                'Below 15 Syrup',
+                '1 tablets for Adults at the time of Headache.',
+                'Not for children.',
+                'Doctor.Ali Akbar'),
+          ),
+          Container(
+            child: MildDiseaseBox(
+                'Skin Burns',
+                'Quench',
+                'Above 15 Tube',
+                'Below 15 Tube',
+                'For Adults Apply on the burn part.',
+                'Do the same for children.',
+                'Doctor.Ali Akbar'),
+          ),
+          Container(
+            child: MildDiseaseBox(
+                'Cuts',
+                'Anti cuts',
+                'Above 15 Tablets',
+                'Below 15 Syrup',
+                '3 tablets for Adults Morning Evening and Night.',
+                '3 tea Spoons for children Morning Evening and Night.',
+                'Doctor.Ali Akbar'),
+          ),
         ]));
   }
 }

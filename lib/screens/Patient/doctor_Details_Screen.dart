@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/Mobile_Doctor_Details.dart';
-import '../../widgets/Tab_Doctor_Details.dart';
+import '../../widgets/Patient Widgets/Mobile_Doctor_Details.dart';
+import '../../widgets/Patient Widgets/Tab_Doctor_Details.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
   const DoctorDetailsScreen({super.key});

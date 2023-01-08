@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/Mobile_Doctor_Recommender_Box.dart';
-import '../../widgets/Tab_Doctor_Recommender_Screen.dart';
+import '../../widgets/Patient Widgets/Mobile_Doctor_Recommender_Box.dart';
+import '../../widgets/Patient Widgets/Tab_Doctor_Recommender_Screen.dart';
 import 'doctor_details_Screen.dart';
 
 class DoctorRecommenderScreen extends StatelessWidget {

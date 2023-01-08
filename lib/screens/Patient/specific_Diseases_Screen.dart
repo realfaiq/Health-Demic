@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/Disease_Box.dart';
+import '../../widgets/Patient Widgets/Specific_Disease_Box.dart';
 
 class SpecificDiseasesScreen extends StatelessWidget {
   const SpecificDiseasesScreen({super.key});
@@ -34,35 +34,20 @@ class SpecificDiseasesScreen extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
-            },
-            child: DiseaseBox('Heart Diseases'),
+          Container(
+            child: SpecificDiseaseBox('Heart Disease'),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
-            },
-            child: DiseaseBox('Lung Diseases'),
+          Container(
+            child: SpecificDiseaseBox('Lung Disease'),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
-            },
-            child: DiseaseBox('Kideny Diseases'),
+          Container(
+            child: SpecificDiseaseBox('Kidney Disease'),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
-            },
-            child: DiseaseBox('Liver Diseases'),
+          Container(
+            child: SpecificDiseaseBox('Liver Disease'),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).pushNamed(SpecificDiseasesScreen.routeName);
-            },
-            child: DiseaseBox('Pyschatrist'),
+          Container(
+            child: SpecificDiseaseBox('Pyschatrist'),
           ),
         ]));
   }

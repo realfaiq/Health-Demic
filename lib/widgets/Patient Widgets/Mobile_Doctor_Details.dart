@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import '../screens/Patient/doctor_Confirmation_Screen.dart';
+import '../../screens/Patient/doctor_Confirmation_Screen.dart';
 
 class MobileDoctorDetails extends StatefulWidget {
   final String doctorName;

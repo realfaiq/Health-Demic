@@ -4,7 +4,7 @@ import 'package:health_demic/screens/Patient/doctor_Recommender_Screen.dart';
 import 'package:health_demic/screens/Patient/find_a_Medicine_Screen.dart';
 import 'screens/Common/log_In_Screen.dart';
 import 'screens/Common/sign_up_Screen.dart';
-import 'screens/Patient/home_Screen.dart';
+import 'screens/Patient/patient_Home_Screen.dart';
 import 'screens/Patient/mild_Diseases_Screen.dart';
 import 'screens/Patient/specific_Diseases_Screen.dart';
 import 'screens/Patient/doctor_Details_Screen.dart';
@@ -13,6 +13,10 @@ import 'screens/Patient/manage_Medical_Profiles.dart';
 import 'screens/Patient/manage_Appointments_Screen.dart';
 import 'screens/Patient/medicine_Recommendation_Screen.dart';
 import 'screens/Patient/view_Medical_Profile_Screen.dart';
+import 'screens/Doctor/doctor_Home_Screen.dart';
+import 'screens/Doctor/manage_Patients_Profile_Screen.dart';
+import 'screens/Doctor/view_Appointments_Screen.dart';
+import 'screens/Doctor/perform_Practice_Screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,6 +72,13 @@ class MyApp extends StatelessWidget {
                   MedicineRecommendationScreen(),
               ViewMedicalProfileScreen.routeName: (context) =>
                   ViewMedicalProfileScreen(),
+              DoctorHomeScreen.routeName: (context) => DoctorHomeScreen(),
+              ManagePatientsProfile.routeName: (context) =>
+                  ManagePatientsProfile(),
+              ViewAppointmentsScreen.routeName: (context) =>
+                  ViewAppointmentsScreen(),
+              PerformPracticeScreen.routeName: (context) =>
+                  PerformPracticeScreen(),
             },
           );
         });

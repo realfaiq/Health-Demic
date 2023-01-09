@@ -25,15 +25,16 @@ class MedicineBox extends StatelessWidget {
             ]),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.sp),
-          child: Row(children: [
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
             CircleAvatar(
               radius: 20.0,
               backgroundImage: NetworkImage(imageUrl),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.sp, vertical: 16.sp),
+              padding: EdgeInsets.symmetric(horizontal: 20.sp),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     medicineName,

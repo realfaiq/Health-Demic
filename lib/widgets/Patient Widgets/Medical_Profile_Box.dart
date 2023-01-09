@@ -28,16 +28,17 @@ class MedicalProfileBox extends StatelessWidget {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
-              child: Row(children: [
+              child:
+                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 CircleAvatar(
                   radius: 25.0,
                   backgroundImage: NetworkImage(imageURL),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20.sp, vertical: 20.sp),
+                  padding: EdgeInsets.symmetric(horizontal: 20.sp),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         name,

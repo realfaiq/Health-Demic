@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/Patient Widgets/Mobile_Box.dart';
-import '../../widgets/Patient Widgets/Tab_Box.dart';
+import '../../widgets/Common Widgets/Mobile_Box.dart';
+import '../../widgets/Common Widgets/Tab_Box.dart';
 import '../../widgets/Common Widgets/Drawer.dart';
 import '../Patient/mild_Diseases_Screen.dart';
 import '../Patient/specific_Diseases_Screen.dart';

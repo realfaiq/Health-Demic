@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './sign_up_Screen.dart';
-import '../Patient/home_Screen.dart';
+import '../Patient/patient_Home_Screen.dart';
+import '../Doctor/doctor_Home_Screen.dart';
 
-class LogInScreen extends StatelessWidget {
+class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
+
+  @override
+  _LogInScreenState createState() => _LogInScreenState();
+}
+
+class _LogInScreenState extends State<LogInScreen> {
+  final _passwordFoucsNode = FocusNode();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _passwordFoucsNode.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +44,11 @@ class LogInScreen extends StatelessWidget {
                     hintText: 'Enter your Email',
                     prefixIcon: Icon(Icons.email),
                   ),
+                  textInputAction: TextInputAction.next,
+                  onFieldSubmitted: (_) {
+                    FocusScope.of(context).requestFocus(_passwordFoucsNode);
+                  },
+                  controller: emailController,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 SizedBox(
@@ -37,6 +60,8 @@ class LogInScreen extends StatelessWidget {
                       prefixIcon: Icon(
                         Icons.lock,
                       )),
+                  focusNode: _passwordFoucsNode,
+                  controller: passwordController,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 SizedBox(
@@ -46,8 +71,18 @@ class LogInScreen extends StatelessWidget {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed(PatientHomeScreen.routeName);
+                      if (emailController.text == 'emilyrose@gmail.com' &&
+                          passwordController.text == 'emily123') {
+                        Navigator.pushNamed(
+                            context, PatientHomeScreen.routeName);
+                      } else if (emailController.text ==
+                              'robertstark@gmail.com' &&
+                          passwordController.text == 'robert123') {
+                        Navigator.pushNamed(
+                            context, DoctorHomeScreen.routeName);
+                      } else if (emailController.text ==
+                              'ahmadfaiq46@gmail.com' &&
+                          passwordController.text == 'faiq123') {}
                     },
                     child: Text(
                       'Log In',

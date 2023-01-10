@@ -53,7 +53,12 @@ class ManageMedicalProfilesScreen extends StatelessWidget {
             child: MedicalProfileBox(
                 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
                 'Chloe Decker',
-                'Disease: Heart'),
+                '22',
+                'Heart',
+                'Salliver, Augmentin',
+                'Dr. Khalil Ur Rehman',
+                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+                '0316-9985144'),
           ),
           SizedBox(
             height: 20.h,
@@ -69,39 +74,19 @@ class ManageMedicalProfilesScreen extends StatelessWidget {
                     'MedicalCondition': 'Fever',
                     'Medications': 'Panadol',
                     'Doctor': 'Doctor. Khalid',
-                    'MedicalNotes':
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-                    'ImportantContacts': '0334-6139039',
+                    'MedicalNotes': 'Hello! there this is my medical Note!',
+                    'ImportantContacts': '03346139039',
                   });
             },
             child: MedicalProfileBox(
                 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
                 'Chloe Decker',
-                'Disease: Fever'),
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, ViewMedicalProfileScreen.routeName,
-                  arguments: {
-                    'imageURL':
-                        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
-                    'name': 'Chloe Decker',
-                    'age': '25 years',
-                    'MedicalCondition': 'Liver Cholestrol',
-                    'Medications': 'Thas',
-                    'Doctor': 'Doctor. Waseem Khan',
-                    'MedicalNotes':
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-                    'ImportantContacts': '0316-9985144',
-                  });
-            },
-            child: MedicalProfileBox(
-                'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
-                'Chloe Decker',
-                'Disease: Liver Cholestrol'),
+                '22',
+                'Fever',
+                'Panadol',
+                'Dr. Ali Khan',
+                'Hello! there this my medical Note!',
+                '03346139039'),
           ),
         ],
       ),

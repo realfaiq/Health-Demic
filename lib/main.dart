@@ -11,6 +11,7 @@ import 'screens/Patient/specific_Diseases_Screen.dart';
 import 'screens/Patient/doctor_Details_Screen.dart';
 import 'screens/Patient/doctor_Confirmation_Screen.dart';
 import 'screens/Patient/manage_Medical_Profiles.dart';
+import 'screens/Patient/edit_Medical_Profile_Screen.dart';
 import 'screens/Patient/manage_Appointments_Screen.dart';
 import 'screens/Patient/medicine_Recommendation_Screen.dart';
 import 'screens/Patient/view_Medical_Profile_Screen.dart';
@@ -68,6 +69,8 @@ class MyApp extends StatelessWidget {
                   DoctorConfirmationScreen(),
               ManageMedicalProfilesScreen.routeName: (context) =>
                   ManageMedicalProfilesScreen(),
+              EditMedicalProfileScreen.routeName: (context) =>
+                  EditMedicalProfileScreen(),
               ManageAppointmentsScreen.routeName: (context) =>
                   ManageAppointmentsScreen(),
               FindAMedicineScreen.routeName: (context) => FindAMedicineScreen(),

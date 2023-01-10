@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_demic/screens/Patient/edit_Medical_Profile_Screen.dart';
 
 class MedicalProfileBox extends StatelessWidget {
   final String imageURL;
   final String name;
   final String age;
+  final String medicalCondition;
+  final String medications;
+  final String doctor;
+  final String medicalNotes;
+  final String importantContacts;
 
-  MedicalProfileBox(this.imageURL, this.name, this.age);
+  MedicalProfileBox(this.imageURL, this.name, this.age, this.medicalCondition,
+      this.medications, this.doctor, this.medicalNotes, this.importantContacts);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +56,7 @@ class MedicalProfileBox extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        age,
+                        'Disease: ${medicalCondition}',
                         style: TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 13.sp,
@@ -66,7 +73,18 @@ class MedicalProfileBox extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        //Code Here...
+                        Navigator.pushNamed(
+                            context, EditMedicalProfileScreen.routeName,
+                            arguments: {
+                              'imageURL': imageURL,
+                              'name': name,
+                              'age': age,
+                              'medicalCondition': medicalCondition,
+                              'medications': medications,
+                              'doctor': doctor,
+                              'medicalNotes': medicalNotes,
+                              'importantContacts': importantContacts,
+                            });
                       },
                       child: Icon(
                         Icons.edit,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './sign_up_Screen.dart';
 import '../Patient/patient_Home_Screen.dart';
 import '../Doctor/doctor_Home_Screen.dart';
+import '../Admin/admin_Home_Screen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -82,7 +83,9 @@ class _LogInScreenState extends State<LogInScreen> {
                             context, DoctorHomeScreen.routeName);
                       } else if (emailController.text ==
                               'ahmadfaiq46@gmail.com' &&
-                          passwordController.text == 'faiq123') {}
+                          passwordController.text == 'faiq123') {
+                        Navigator.pushNamed(context, AdminHomeScreen.routeName);
+                      }
                     },
                     child: Text(
                       'Log In',

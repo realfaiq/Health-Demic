@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_demic/screens/Patient/doctor_Recommender_Screen.dart';
 import 'package:health_demic/screens/Patient/find_a_Medicine_Screen.dart';
+import 'widgets/Doctor Widgets/Practice_Form.dart';
 import 'screens/Common/log_In_Screen.dart';
 import 'screens/Common/sign_up_Screen.dart';
 import 'screens/Patient/patient_Home_Screen.dart';
@@ -17,6 +18,8 @@ import 'screens/Doctor/doctor_Home_Screen.dart';
 import 'screens/Doctor/manage_Patients_Profile_Screen.dart';
 import 'screens/Doctor/view_Appointments_Screen.dart';
 import 'screens/Doctor/perform_Practice_Screen.dart';
+import 'screens/Doctor/practice_Confirmation_Screen.dart';
+import 'screens/Admin/admin_Home_Screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,6 +82,10 @@ class MyApp extends StatelessWidget {
                   ViewAppointmentsScreen(),
               PerformPracticeScreen.routeName: (context) =>
                   PerformPracticeScreen(),
+              PracticeForm.routeName: (context) => PracticeForm(),
+              PracticeConfirmationScreen.routeName: (context) =>
+                  PracticeConfirmationScreen(),
+              AdminHomeScreen.routeName: (context) => AdminHomeScreen(),
             },
           );
         });

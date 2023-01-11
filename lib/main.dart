@@ -15,12 +15,20 @@ import 'screens/Patient/edit_Medical_Profile_Screen.dart';
 import 'screens/Patient/manage_Appointments_Screen.dart';
 import 'screens/Patient/medicine_Recommendation_Screen.dart';
 import 'screens/Patient/view_Medical_Profile_Screen.dart';
+import 'screens/Patient/add_Medical_Profile_Screen.dart';
 import 'screens/Doctor/doctor_Home_Screen.dart';
 import 'screens/Doctor/manage_Patients_Profile_Screen.dart';
 import 'screens/Doctor/view_Appointments_Screen.dart';
 import 'screens/Doctor/perform_Practice_Screen.dart';
 import 'screens/Doctor/practice_Confirmation_Screen.dart';
+import 'screens/Doctor/view_Patients_Profile_Screen.dart';
+import 'screens/Doctor/add_Patients_Profile_Screen.dart';
+import 'screens/Doctor/edit_Patient_Profile_Screen.dart';
 import 'screens/Admin/admin_Home_Screen.dart';
+import 'screens/Admin/Manage Admins/manage_Admins_Screen.dart';
+import 'screens/Admin/Manage Admins/add_Admins_Screen.dart';
+import 'screens/Admin/Manage Admins/edit_Admins_Screen.dart';
+import 'screens/Admin/Manage Admins/view_Admins_Screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,8 +87,8 @@ class MyApp extends StatelessWidget {
               ViewMedicalProfileScreen.routeName: (context) =>
                   ViewMedicalProfileScreen(),
               DoctorHomeScreen.routeName: (context) => DoctorHomeScreen(),
-              ManagePatientsProfile.routeName: (context) =>
-                  ManagePatientsProfile(),
+              ManagePatientsProfileScreen.routeName: (context) =>
+                  ManagePatientsProfileScreen(),
               ViewAppointmentsScreen.routeName: (context) =>
                   ViewAppointmentsScreen(),
               PerformPracticeScreen.routeName: (context) =>
@@ -89,6 +97,18 @@ class MyApp extends StatelessWidget {
               PracticeConfirmationScreen.routeName: (context) =>
                   PracticeConfirmationScreen(),
               AdminHomeScreen.routeName: (context) => AdminHomeScreen(),
+              AddMedicalProfileScreen.routeName: (context) =>
+                  AddMedicalProfileScreen(),
+              ViewPatientsProfileScreen.routeName: (context) =>
+                  ViewPatientsProfileScreen(),
+              AddPatientProfileScreen.routeName: (context) =>
+                  AddPatientProfileScreen(),
+              EditPatientProfileScreen.routeName: (context) =>
+                  EditPatientProfileScreen(),
+              ManageAdminScreen.routeName: (context) => ManageAdminScreen(),
+              AddAdminScreen.routeName: (context) => AddAdminScreen(),
+              EditAdminScreen.routeName: (context) => EditAdminScreen(),
+              ViewAdminScreen.routeName: (context) => ViewAdminScreen(),
             },
           );
         });

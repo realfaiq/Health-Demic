@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './Manage Admins/manage_Admins_Screen.dart';
 import '../../widgets/Common Widgets/Drawer.dart';
 import '../../widgets/Admin Widgets/Home_Box.dart';
 
@@ -48,7 +49,12 @@ class AdminHomeScreen extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          HomeBox('Manage Admins'),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, ManageAdminScreen.routeName);
+            },
+            child: HomeBox('Manage Admins'),
+          ),
           SizedBox(
             height: 20.h,
           ),

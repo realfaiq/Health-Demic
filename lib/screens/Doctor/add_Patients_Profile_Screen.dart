@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class AddMedicalProfileScreen extends StatefulWidget {
-  const AddMedicalProfileScreen({super.key});
-  static const routeName = '/add-medical-profile';
+class AddPatientProfileScreen extends StatefulWidget {
+  const AddPatientProfileScreen({super.key});
+  static const routeName = '/add-patient-profile';
 
   @override
-  _AddMedicalProfileScreenState createState() =>
-      _AddMedicalProfileScreenState();
+  _AddPatientProfileScreenState createState() =>
+      _AddPatientProfileScreenState();
 }
 
-class _AddMedicalProfileScreenState extends State<AddMedicalProfileScreen> {
+class _AddPatientProfileScreenState extends State<AddPatientProfileScreen> {
   File? image;
 
   final ImagePicker picker = ImagePicker();

@@ -73,7 +73,7 @@ class DoctorHomeScreen extends StatelessWidget {
                       'Manage Patients Profile',
                       'Manage Your Patient Profiles',
                       Icons.manage_accounts,
-                      ManagePatientsProfile.routeName),
+                      ManagePatientsProfileScreen.routeName),
                   MobileBox(
                       'white',
                       'View Your Appointments',
@@ -104,7 +104,7 @@ class DoctorHomeScreen extends StatelessWidget {
                       'Manage Patients Profile',
                       'Manage Your Patient Profiles',
                       Icons.manage_accounts,
-                      ManagePatientsProfile.routeName),
+                      ManagePatientsProfileScreen.routeName),
                   TabBox(
                       'white',
                       'View Your Appointments',

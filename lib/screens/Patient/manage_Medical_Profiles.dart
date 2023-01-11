@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/Patient Widgets/Medical_Profile_Box.dart';
 import '../Patient/view_Medical_Profile_Screen.dart';
+import '../Patient/add_Medical_Profile_Screen.dart';
 
 class ManageMedicalProfilesScreen extends StatelessWidget {
   const ManageMedicalProfilesScreen({super.key});
@@ -91,7 +92,9 @@ class ManageMedicalProfilesScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, AddMedicalProfileScreen.routeName);
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(
           Icons.add,

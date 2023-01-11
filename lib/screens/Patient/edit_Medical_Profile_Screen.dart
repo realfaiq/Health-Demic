@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class EditMedicalProfileScreen extends StatefulWidget {
   static const routeName = '/edit-medical-profile';
@@ -11,16 +12,22 @@ class EditMedicalProfileScreen extends StatefulWidget {
 }
 
 class _EditMedicalProfileScreenState extends State<EditMedicalProfileScreen> {
-  XFile? image;
+  File? image;
 
   final ImagePicker picker = ImagePicker();
 
   Future getImage(ImageSource media) async {
-    var img = await picker.pickImage(source: media);
+    try {
+      var img = await picker.pickImage(source: media);
 
-    setState(() {
-      image = img;
-    });
+      if (img == null) return;
+      final imageTemporary = File(img.path);
+      setState(() {
+        image = imageTemporary;
+      });
+    } on PlatformException catch (e) {
+      print('Failed to pick image ${e}');
+    }
   }
 
   @override
@@ -56,16 +63,22 @@ class _EditMedicalProfileScreenState extends State<EditMedicalProfileScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 30.0,
-                  backgroundImage: NetworkImage(args['imageURL']),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(60.0),
+                  child: image != null
+                      ? Image.file(image!)
+                      : Image.network(
+                          args['imageURL'],
+                          height: 60.0,
+                          width: 60.0,
+                          fit: BoxFit.cover,
+                        ),
                 ),
                 SizedBox(
                   width: 20.w,
                 ),
                 TextButton(
                   onPressed: () {
-                    // getImage(ImageSource.gallery);
                     showModalBottomSheet(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
@@ -79,43 +92,89 @@ class _EditMedicalProfileScreenState extends State<EditMedicalProfileScreen> {
                             child: Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 20.sp, horizontal: 30.sp),
-                              child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        getImage(ImageSource.camera);
-                                      },
-                                      child: CircleAvatar(
-                                        radius: 30.0,
-                                        backgroundColor:
-                                            Theme.of(context).accentColor,
-                                        child: Center(
-                                            child: Icon(
-                                          Icons.camera,
-                                          color: Theme.of(context).primaryColor,
-                                        )),
+                              child: Column(children: [
+                                Text(
+                                  'Please Select an Option',
+                                  style: TextStyle(
+                                      color: Theme.of(context).accentColor,
+                                      fontFamily: 'Roboto',
+                                      fontSize: 18.sp,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  height: 30.h,
+                                ),
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      InkWell(
+                                          onTap: () {
+                                            getImage(ImageSource.camera);
+                                          },
+                                          child: Column(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 30.0,
+                                                backgroundColor:
+                                                    Theme.of(context)
+                                                        .accentColor,
+                                                child: Center(
+                                                    child: Icon(
+                                                  Icons.camera,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                )),
+                                              ),
+                                              SizedBox(
+                                                height: 10.h,
+                                              ),
+                                              Text(
+                                                'Camera',
+                                                style: TextStyle(
+                                                    color: Theme.of(context)
+                                                        .accentColor,
+                                                    fontFamily: 'Roboto'),
+                                              )
+                                            ],
+                                          )),
+                                      SizedBox(
+                                        width: 20.w,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 20.w,
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        getImage(ImageSource.gallery);
-                                      },
-                                      child: CircleAvatar(
-                                        radius: 30.0,
-                                        backgroundColor:
-                                            Theme.of(context).accentColor,
-                                        child: Center(
-                                            child: Icon(
-                                          Icons.browse_gallery,
-                                          color: Theme.of(context).primaryColor,
-                                        )),
-                                      ),
-                                    )
-                                  ]),
+                                      InkWell(
+                                          onTap: () {
+                                            getImage(ImageSource.gallery);
+                                          },
+                                          child: Column(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 30.0,
+                                                backgroundColor:
+                                                    Theme.of(context)
+                                                        .accentColor,
+                                                child: Center(
+                                                    child: Icon(
+                                                  Icons.image,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                )),
+                                              ),
+                                              SizedBox(
+                                                height: 10.h,
+                                              ),
+                                              Text(
+                                                'Gallery',
+                                                style: TextStyle(
+                                                    color: Theme.of(context)
+                                                        .accentColor,
+                                                    fontFamily: 'Roboto'),
+                                              )
+                                            ],
+                                          ))
+                                    ]),
+                              ]),
                             ),
                           );
                         });

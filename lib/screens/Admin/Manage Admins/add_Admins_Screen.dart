@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
-class AddMedicalProfileScreen extends StatefulWidget {
-  const AddMedicalProfileScreen({super.key});
-  static const routeName = '/add-medical-profile';
+class AddAdminScreen extends StatefulWidget {
+  const AddAdminScreen({super.key});
+  static const routeName = '/add-admin-screen';
 
   @override
-  _AddMedicalProfileScreenState createState() =>
-      _AddMedicalProfileScreenState();
+  _AddAdminScreenState createState() => _AddAdminScreenState();
 }
 
-class _AddMedicalProfileScreenState extends State<AddMedicalProfileScreen> {
+class _AddAdminScreenState extends State<AddAdminScreen> {
   File? image;
 
   final ImagePicker picker = ImagePicker();
@@ -52,7 +51,7 @@ class _AddMedicalProfileScreenState extends State<AddMedicalProfileScreen> {
         padding: EdgeInsets.symmetric(horizontal: 30.sp, vertical: 20.sp),
         children: [
           Text(
-            'Add a Medical Profile',
+            'Add Admin\'s Profile!',
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
@@ -67,11 +66,7 @@ class _AddMedicalProfileScreenState extends State<AddMedicalProfileScreen> {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(60.0),
                     child: image != null
-                        ? Image.file(
-                            image!,
-                            height: 60.0.sp,
-                            width: 60.0,
-                          )
+                        ? Image.file(image!)
                         : CircleAvatar(
                             radius: 30.0.r,
                             backgroundColor: Theme.of(context).primaryColor,
@@ -216,35 +211,14 @@ class _AddMedicalProfileScreenState extends State<AddMedicalProfileScreen> {
               ),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: 'Medical Condition',
-                    prefixIcon: Icon(Icons.medical_information_rounded)),
+                    labelText: 'Email', prefixIcon: Icon(Icons.mail)),
               ),
               TextFormField(
                 decoration: InputDecoration(
-                    labelText: 'Medications',
-                    prefixIcon: Icon(Icons.medication)),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Doctor',
-                    prefixIcon: Icon(Icons.medical_services)),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Medical Notes', prefixIcon: Icon(Icons.notes)),
-                keyboardType: TextInputType.multiline,
-                minLines: 1,
-                maxLines: 3,
-                maxLength: 250,
-                maxLengthEnforcement: MaxLengthEnforcement.enforced,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Important Contacts',
-                    prefixIcon: Icon(Icons.contacts)),
+                    labelText: 'Password', prefixIcon: Icon(Icons.lock)),
               ),
               SizedBox(
-                height: 30.h,
+                height: 30.sp,
               ),
               TextButton(
                 onPressed: () {},

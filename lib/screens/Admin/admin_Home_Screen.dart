@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './Manage Admins/manage_Admins_Screen.dart';
 import '../../widgets/Common Widgets/Drawer.dart';
 import '../../widgets/Admin Widgets/Home_Box.dart';
+import '../Admin/Manage Doctors/manage_Doctor_Screen.dart';
+import '../Admin/Manage Patients/manage_Patient_Screen.dart';
+import '../Admin/Manage Disease/manage_Diseases_Screen.dart';
+import '../Admin/Manage Medicine/manage_Medicines_Screen.dart';
 
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
@@ -51,26 +54,46 @@ class AdminHomeScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, ManageAdminScreen.routeName);
+              Navigator.pushNamed(context, ManageDiseasesScreen.routeName);
             },
             child: HomeBox('Manage Admins'),
           ),
           SizedBox(
             height: 20.h,
           ),
-          HomeBox('Manage Doctors'),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, ManageDoctorScreen.routeName);
+            },
+            child: HomeBox('Manage Doctors'),
+          ),
           SizedBox(
             height: 20.h,
           ),
-          HomeBox('Manage Patients'),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, ManagePatientScreen.routeName);
+            },
+            child: HomeBox('Manage Patients'),
+          ),
           SizedBox(
             height: 20.h,
           ),
-          HomeBox('Manage Diseases'),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, ManageDiseasesScreen.routeName);
+            },
+            child: HomeBox('Manage Diseases'),
+          ),
           SizedBox(
             height: 20.h,
           ),
-          HomeBox('Manage Medicines'),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, ManageMedicineScreen.routeName);
+            },
+            child: HomeBox('Manage Medicines'),
+          ),
         ],
       ),
     );

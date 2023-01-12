@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './view_Admins_Screen.dart';
-import 'add_Admins_Screen.dart';
-import '../../../widgets/Admin Widgets/Admin_Profile_Box.dart';
+import './view_Patient_Screen.dart';
+import './add_Patient_Screen.dart';
+import '../../../widgets/Admin Widgets/Patient_Profile_Box.dart';
 
-class ManageAdminScreen extends StatelessWidget {
-  const ManageAdminScreen({super.key});
-  static const routeName = '/manage-admins-screen';
+class ManagePatientScreen extends StatelessWidget {
+  const ManagePatientScreen({super.key});
+  static const routeName = '/manage-patient-screen';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ManageAdminScreen extends StatelessWidget {
         padding: EdgeInsets.all(20.sp),
         children: [
           Text(
-            'Manage Admins',
+            'Manage Patients',
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
@@ -37,7 +37,7 @@ class ManageAdminScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, ViewAdminScreen.routeName,
+              Navigator.pushNamed(context, ViewPatientScreen.routeName,
                   arguments: {
                     'imageURL':
                         'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
@@ -47,7 +47,7 @@ class ManageAdminScreen extends StatelessWidget {
                     'password': 'sansa123',
                   });
             },
-            child: AdminProfileBox(
+            child: PatientProfileBox(
               'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
               'Sansa Stark',
               '23',
@@ -60,7 +60,7 @@ class ManageAdminScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, ViewAdminScreen.routeName,
+              Navigator.pushNamed(context, ViewPatientScreen.routeName,
                   arguments: {
                     'imageURL':
                         'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
@@ -70,7 +70,7 @@ class ManageAdminScreen extends StatelessWidget {
                     'password': 'chloe123',
                   });
             },
-            child: AdminProfileBox(
+            child: PatientProfileBox(
                 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
                 'Chloe Decker',
                 '22',
@@ -81,7 +81,7 @@ class ManageAdminScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, AddAdminScreen.routeName);
+          Navigator.pushNamed(context, AddPatientScreen.routeName);
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(

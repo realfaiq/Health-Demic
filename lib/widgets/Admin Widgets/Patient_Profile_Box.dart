@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../screens/Admin/Manage Admins/edit_Admins_Screen.dart';
+import '../../screens/Admin/Manage Patients/edit_Patient_Screen.dart';
 
-class ProfileBox extends StatelessWidget {
+class PatientProfileBox extends StatelessWidget {
   final String imageURL;
   final String name;
   final String age;
   final String email;
   final String password;
 
-  ProfileBox(this.imageURL, this.name, this.age, this.email, this.password);
+  PatientProfileBox(
+      this.imageURL, this.name, this.age, this.email, this.password);
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,8 @@ class ProfileBox extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, EditAdminScreen.routeName,
+                        Navigator.pushNamed(
+                            context, EditPatientScreen.routeName,
                             arguments: {
                               'imageURL': imageURL,
                               'name': name,

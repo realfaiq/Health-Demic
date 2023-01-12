@@ -29,6 +29,21 @@ import 'screens/Admin/Manage Admins/manage_Admins_Screen.dart';
 import 'screens/Admin/Manage Admins/add_Admins_Screen.dart';
 import 'screens/Admin/Manage Admins/edit_Admins_Screen.dart';
 import 'screens/Admin/Manage Admins/view_Admins_Screen.dart';
+import 'screens/Admin/Manage Doctors/manage_Doctor_Screen.dart';
+import 'screens/Admin/Manage Doctors/view_Doctor_Screen.dart';
+import 'screens/Admin/Manage Doctors/add_Doctor_Screen.dart';
+import 'screens/Admin/Manage Doctors/edit_Doctor_Screen.dart';
+import 'screens/Admin/Manage Patients/manage_Patient_Screen.dart';
+import 'screens/Admin/Manage Patients/view_Patient_Screen.dart';
+import 'screens/Admin/Manage Patients/add_Patient_Screen.dart';
+import 'screens/Admin/Manage Patients/edit_Patient_Screen.dart';
+import 'screens/Admin/Manage Disease/manage_Diseases_Screen.dart';
+import 'screens/Admin/Manage Disease/add_Disease_Screen.dart';
+import 'screens/Admin/Manage Disease/edit_Disease_Screen.dart';
+import 'screens/Admin/Manage Medicine/manage_Medicines_Screen.dart';
+import 'screens/Admin/Manage Medicine/add_Medicine_Screen.dart';
+import 'screens/Admin/Manage Medicine/edit_Medicine_Screen.dart';
+import 'screens/Admin/Manage Medicine/view_Medicine_Screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -109,6 +124,23 @@ class MyApp extends StatelessWidget {
               AddAdminScreen.routeName: (context) => AddAdminScreen(),
               EditAdminScreen.routeName: (context) => EditAdminScreen(),
               ViewAdminScreen.routeName: (context) => ViewAdminScreen(),
+              ManageDoctorScreen.routeName: (context) => ManageDoctorScreen(),
+              ViewDoctorScreen.routeName: (context) => ViewDoctorScreen(),
+              AddDoctorScreen.routeName: (context) => AddDoctorScreen(),
+              EditDoctorScreen.routeName: (context) => EditDoctorScreen(),
+              ManagePatientScreen.routeName: (context) => ManagePatientScreen(),
+              ViewPatientScreen.routeName: (context) => ViewPatientScreen(),
+              AddPatientScreen.routeName: (context) => AddPatientScreen(),
+              EditPatientScreen.routeName: (context) => EditPatientScreen(),
+              ManageDiseasesScreen.routeName: (context) =>
+                  ManageDiseasesScreen(),
+              AddDiseaseScreen.routeName: (context) => AddDiseaseScreen(),
+              EditDiseaseScreen.routeName: (context) => EditDiseaseScreen(),
+              ManageMedicineScreen.routeName: (context) =>
+                  ManageMedicineScreen(),
+              AddMedicineScreen.routeName: (context) => AddMedicineScreen(),
+              EditMedicineScreen.routeName: (context) => EditMedicineScreen(),
+              ViewMedicineScreen.routeName: (context) => ViewMedicineScreen(),
             },
           );
         });

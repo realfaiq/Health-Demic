@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../widgets/Common Widgets/Drawer.dart';
 
 class AddDiseaseScreen extends StatelessWidget {
   const AddDiseaseScreen({super.key});

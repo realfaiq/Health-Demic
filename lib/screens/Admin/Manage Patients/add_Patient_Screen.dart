@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import '../../../widgets/Common Widgets/Drawer.dart';
 
 class AddPatientScreen extends StatefulWidget {
   const AddPatientScreen({super.key});
@@ -34,17 +35,34 @@ class _AddPatientScreenState extends State<AddPatientScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MainDrawer(
+          'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80',
+          'Faiq Ahmad',
+          'ahmadfaiq46.com',
+          'faiq123',
+          'admin'),
       appBar: (AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, true);
+            },
+            icon: Icon(Icons.arrow_back)),
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          Padding(
-              padding: EdgeInsets.all(10.sp),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
-              )),
+          Builder(
+              builder: (context) => InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.all(10.sp),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80'),
+                        )),
+                  ))
         ],
       )),
       body: ListView(
@@ -66,7 +84,12 @@ class _AddPatientScreenState extends State<AddPatientScreen> {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(60.0),
                     child: image != null
-                        ? Image.file(image!)
+                        ? Image.file(
+                            image!,
+                            height: 60.0.sp,
+                            width: 60.0.sp,
+                            fit: BoxFit.cover,
+                          )
                         : CircleAvatar(
                             radius: 30.0.r,
                             backgroundColor: Theme.of(context).primaryColor,

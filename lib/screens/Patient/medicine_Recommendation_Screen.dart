@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../widgets/Common Widgets/Drawer.dart';
 
 class MedicineRecommendationScreen extends StatelessWidget {
   const MedicineRecommendationScreen({super.key});
@@ -10,17 +11,36 @@ class MedicineRecommendationScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
+      drawer: MainDrawer(
+          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          'Emily Rose',
+          'emily@gmail.com',
+          'emily123',
+          'patient'),
+      appBar: (AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, true);
+            },
+            icon: Icon(Icons.arrow_back)),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          Padding(
-              padding: EdgeInsets.all(10.sp),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
-              )),
+          Builder(
+              builder: (context) => InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.all(10.sp),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
+                        )),
+                  ))
         ],
-      ),
+      )),
       body: SafeArea(
           child: ListView(
         children: [

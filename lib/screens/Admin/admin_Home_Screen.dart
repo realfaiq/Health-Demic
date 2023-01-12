@@ -6,6 +6,7 @@ import '../Admin/Manage Doctors/manage_Doctor_Screen.dart';
 import '../Admin/Manage Patients/manage_Patient_Screen.dart';
 import '../Admin/Manage Disease/manage_Diseases_Screen.dart';
 import '../Admin/Manage Medicine/manage_Medicines_Screen.dart';
+import '../Admin/Manage Admins/manage_Admins_Screen.dart';
 
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
@@ -14,7 +15,12 @@ class AdminHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainDrawer(),
+      drawer: MainDrawer(
+          'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80',
+          'Faiq Ahmad',
+          'ahmadfaiq46.com',
+          'faiq123',
+          'admin'),
       appBar: (AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
@@ -33,12 +39,18 @@ class AdminHomeScreen extends StatelessWidget {
           ),
         ]),
         actions: [
-          Padding(
-              padding: EdgeInsets.all(10.sp),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
-              ))
+          Builder(
+              builder: (BuildContext context) => InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.all(10.sp),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80'),
+                        )),
+                  ))
         ],
       )),
       body: ListView(
@@ -54,7 +66,7 @@ class AdminHomeScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, ManageDiseasesScreen.routeName);
+              Navigator.pushNamed(context, ManageAdminScreen.routeName);
             },
             child: HomeBox('Manage Admins'),
           ),

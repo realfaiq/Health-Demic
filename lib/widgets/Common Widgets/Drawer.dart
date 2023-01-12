@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_demic/screens/Admin/admin_Home_Screen.dart';
+import 'package:health_demic/screens/Doctor/doctor_Home_Screen.dart';
+import 'package:health_demic/screens/Patient/patient_Home_Screen.dart';
+import '../../screens/Common/log_In_Screen.dart';
 
 class MainDrawer extends StatelessWidget {
+  final String imageURL;
+  final String name;
+  final String email;
+  final String password;
+  final String userType;
+
+  MainDrawer(
+      this.imageURL, this.name, this.email, this.password, this.userType);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,8 +24,7 @@ class MainDrawer extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 100.0.r,
-            backgroundImage: NetworkImage(
-                'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
+            backgroundImage: NetworkImage(imageURL),
           ),
           SizedBox(
             height: 20.h,
@@ -20,7 +32,7 @@ class MainDrawer extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Text(
-              'Emily Rose',
+              name,
               style: TextStyle(color: Colors.white, fontSize: 25.sp),
             ),
           ),
@@ -30,7 +42,16 @@ class MainDrawer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 50.sp),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                userType == 'patient'
+                    ? Navigator.of(context)
+                        .pushReplacementNamed(PatientHomeScreen.routeName)
+                    : userType == 'doctor'
+                        ? Navigator.of(context)
+                            .pushReplacementNamed(DoctorHomeScreen.routeName)
+                        : Navigator.of(context)
+                            .pushReplacementNamed(AdminHomeScreen.routeName);
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -108,7 +129,10 @@ class MainDrawer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 50.sp),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => LogInScreen()));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

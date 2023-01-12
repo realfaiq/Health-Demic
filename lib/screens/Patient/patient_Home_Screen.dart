@@ -10,38 +10,41 @@ import '../Patient/manage_Appointments_Screen.dart';
 import '../Patient/find_a_Medicine_Screen.dart';
 
 class PatientHomeScreen extends StatelessWidget {
-  static const routeName = '/home-screen';
+  static String routeName = '/home-screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainDrawer(),
+      drawer: MainDrawer(
+          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          'Emily Rose',
+          'emily@gmail.com',
+          'emily123',
+          'patient'),
       appBar: (AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            'Welcome Emily Rose!',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          SizedBox(
-            width: 10.w,
-          ),
-          Icon(
-            Icons.waving_hand,
-            color: Colors.orange.shade100,
-          ),
-        ]),
-        actions: [
-          Padding(
-              padding: EdgeInsets.all(10.sp),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
-              ))
-        ],
-      )),
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Text(
+              'Home',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Builder(
+              builder: (context) => InkWell(
+                onTap: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                child: Padding(
+                    padding: EdgeInsets.all(10.sp),
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
+                    )),
+              ),
+            )
+          ]))),
       body: SafeArea(
           child: Column(
         children: [
@@ -58,7 +61,8 @@ class PatientHomeScreen extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Theme.of(context).accentColor,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp),
                 )),
               )),
           Expanded(

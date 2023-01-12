@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import '../../../widgets/Common Widgets/Drawer.dart';
 
 class EditAdminScreen extends StatefulWidget {
   const EditAdminScreen({super.key});
@@ -35,17 +36,34 @@ class _EditAdminScreenState extends State<EditAdminScreen> {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
+      drawer: MainDrawer(
+          'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80',
+          'Faiq Ahmad',
+          'ahmadfaiq46.com',
+          'faiq123',
+          'admin'),
       appBar: (AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, true);
+            },
+            icon: Icon(Icons.arrow_back)),
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          Padding(
-              padding: EdgeInsets.all(10.sp),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'),
-              )),
+          Builder(
+              builder: (context) => InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Padding(
+                        padding: EdgeInsets.all(10.sp),
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80'),
+                        )),
+                  ))
         ],
       )),
       body: ListView(
@@ -67,7 +85,12 @@ class _EditAdminScreenState extends State<EditAdminScreen> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(60.0),
                   child: image != null
-                      ? Image.file(image!)
+                      ? Image.file(
+                          image!,
+                          height: 60.0.sp,
+                          width: 60.0.sp,
+                          fit: BoxFit.cover,
+                        )
                       : Image.network(
                           args['imageURL'],
                           height: 60.0,

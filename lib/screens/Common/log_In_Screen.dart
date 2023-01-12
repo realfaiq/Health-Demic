@@ -56,6 +56,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   height: 13.h,
                 ),
                 TextFormField(
+                  obscureText: true,
                   decoration: const InputDecoration(
                       hintText: 'Enter your Password',
                       prefixIcon: Icon(
@@ -74,17 +75,26 @@ class _LogInScreenState extends State<LogInScreen> {
                     onPressed: () {
                       if (emailController.text == 'emilyrose@gmail.com' &&
                           passwordController.text == 'emily123') {
-                        Navigator.pushNamed(
-                            context, PatientHomeScreen.routeName);
+                        Navigator.pushReplacementNamed(
+                          context,
+                          PatientHomeScreen.routeName,
+                        );
                       } else if (emailController.text ==
                               'robertstark@gmail.com' &&
                           passwordController.text == 'robert123') {
-                        Navigator.pushNamed(
-                            context, DoctorHomeScreen.routeName);
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    DoctorHomeScreen()));
                       } else if (emailController.text ==
                               'ahmadfaiq46@gmail.com' &&
                           passwordController.text == 'faiq123') {
-                        Navigator.pushNamed(context, AdminHomeScreen.routeName);
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    AdminHomeScreen()));
                       }
                     },
                     child: Text(

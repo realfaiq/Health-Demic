@@ -95,6 +95,37 @@ class _LogInScreenState extends State<LogInScreen> {
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
                                     AdminHomeScreen()));
+                      } else if (emailController.text == '' &&
+                          passwordController.text == '') {
+                        showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                                  title: const Text('Empty Entry'),
+                                  content: const Text(
+                                      'Please make sure you\'ve entered an email and password'),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text('Ok')),
+                                  ],
+                                ));
+                      } else {
+                        showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                                  title: const Text('Incorrect Credentials'),
+                                  content: const Text(
+                                      'Please make sure you\'ve entered a correct email and password'),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text('Ok')),
+                                  ],
+                                ));
                       }
                     },
                     child: Text(

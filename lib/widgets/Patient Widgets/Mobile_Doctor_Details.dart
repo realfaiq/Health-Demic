@@ -40,6 +40,22 @@ class _MobileDoctorDetailsState extends State<MobileDoctorDetails> {
                   Text(
                     widget.education,
                     style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      TextButton(
+                        child: Text('Reviews'),
+                        onPressed: () {},
+                      )
+                    ],
                   )
                 ],
               ),

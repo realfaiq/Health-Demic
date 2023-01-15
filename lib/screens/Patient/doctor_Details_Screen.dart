@@ -47,20 +47,22 @@ class DoctorDetailsScreen extends StatelessWidget {
           builder: (context, constraints) {
             if (constraints.maxWidth < 500) {
               return MobileDoctorDetails(
-                  args['doctorName'],
-                  args['education'],
-                  args['imageURL'],
-                  args['patients'],
-                  args['experience'],
-                  args['Fee']);
+                args['doctorName'],
+                args['education'],
+                args['imageURL'],
+                args['patients'],
+                args['experience'],
+                args['Fee'],
+              );
             } else {
               return TabDoctorDetails(
-                  args['doctorName'],
-                  args['education'],
-                  args['imageURL'],
-                  args['patients'],
-                  args['experience'],
-                  args['Fee']);
+                args['doctorName'],
+                args['education'],
+                args['imageURL'],
+                args['patients'],
+                args['experience'],
+                args['Fee'],
+              );
             }
           },
         ));

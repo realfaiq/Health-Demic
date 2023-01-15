@@ -46,6 +46,22 @@ class _TabDoctorDetailsState extends State<TabDoctorDetails> {
                         fontFamily: 'Roboto',
                         fontSize: 30.sp,
                         color: Colors.black),
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      Icon(Icons.star),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      TextButton(
+                        child: Text('Reviews'),
+                        onPressed: () {},
+                      )
+                    ],
                   )
                 ],
               ),

@@ -76,7 +76,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS/MSC Cardiologist RMI',
                                   'patients': '600+',
                                   'experience': '7yrs +',
-                                  'Fee': 'Rs. 1200-/'
+                                  'Fee': 'Rs. 1200-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -97,7 +97,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                       'Mphil. Arteries Arteries Specialist',
                                   'patients': '500+',
                                   'experience': '6 yrs +',
-                                  'Fee': 'Rs. 900-/'
+                                  'Fee': 'Rs. 900-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -117,7 +117,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Mphil. Arteries of Heart',
                                   'patients': '400+',
                                   'experience': '5 yrs +',
-                                  'Fee': 'Rs. 1000-/'
+                                  'Fee': 'Rs. 1000-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -137,7 +137,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '300+',
                                   'experience': '4 yrs +',
-                                  'Fee': 'Rs. 1500-/'
+                                  'Fee': 'Rs. 1500-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -157,7 +157,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '200+',
                                   'experience': '3 yrs +',
-                                  'Fee': 'Rs. 1000-/'
+                                  'Fee': 'Rs. 1000-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -177,7 +177,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '100+',
                                   'experience': '2 yrs +',
-                                  'Fee': 'Rs. 800-/'
+                                  'Fee': 'Rs. 800-/',
                                 });
                           },
                           child: MobileDoctorRecommenderBox(
@@ -208,7 +208,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS/MSC Cardiologist RMI',
                                   'patients': '600+',
                                   'experience': '7yrs +',
-                                  'Fee': 'Rs. 1200-/'
+                                  'Fee': 'Rs. 1200-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(
@@ -229,7 +229,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                       'Mphil. Arteries Arteries Specialist',
                                   'patients': '500+',
                                   'experience': '6 yrs +',
-                                  'Fee': 'Rs. 900-/'
+                                  'Fee': 'Rs. 900-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(
@@ -249,7 +249,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Mphil. Arteries of Heart',
                                   'patients': '400+',
                                   'experience': '5 yrs +',
-                                  'Fee': 'Rs. 1000-/'
+                                  'Fee': 'Rs. 1000-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(
@@ -269,7 +269,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '300+',
                                   'experience': '4 yrs +',
-                                  'Fee': 'Rs. 1500-/'
+                                  'Fee': 'Rs. 1500-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(
@@ -289,7 +289,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '200+',
                                   'experience': '3 yrs +',
-                                  'Fee': 'Rs. 1000-/'
+                                  'Fee': 'Rs. 1000-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(
@@ -309,7 +309,7 @@ class DoctorRecommenderScreen extends StatelessWidget {
                                   'education': 'MBBS Doctor of Heart',
                                   'patients': '100+',
                                   'experience': '2 yrs +',
-                                  'Fee': 'Rs. 800-/'
+                                  'Fee': 'Rs. 800-/',
                                 });
                           },
                           child: TabDoctorRecommenderBox(

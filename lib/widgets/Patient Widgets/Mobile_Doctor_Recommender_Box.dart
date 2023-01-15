@@ -53,7 +53,7 @@ class MobileDoctorRecommenderBox extends StatelessWidget {
                       fontFamily: 'Roboto',
                       color: Colors.black,
                       fontSize: 13.sp),
-                )
+                ),
               ]),
         ));
   }

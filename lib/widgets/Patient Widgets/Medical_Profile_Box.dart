@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_demic/screens/Patient/edit_Medical_Profile_Screen.dart';
 
+import '../Common Widgets/custom_Snackbar.dart';
+
 class MedicalProfileBox extends StatelessWidget {
   final String imageURL;
   final String name;
@@ -94,10 +96,14 @@ class MedicalProfileBox extends StatelessWidget {
                     SizedBox(
                       width: 10.w,
                     ),
-                    Icon(
-                      Icons.delete,
-                      color: Colors.white,
-                    )
+                    IconButton(
+                        onPressed: () {
+                          customSnackBar('Appointment Deleted');
+                        },
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.white,
+                        ))
                   ]),
             )
           ]),

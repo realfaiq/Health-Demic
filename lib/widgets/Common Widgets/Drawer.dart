@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_demic/screens/Admin/admin_Home_Screen.dart';
+import 'package:health_demic/screens/Common/edit_Profile_Screen.dart';
 import 'package:health_demic/screens/Doctor/doctor_Home_Screen.dart';
+import 'package:health_demic/screens/Doctor/edit_Patient_Profile_Screen.dart';
 import 'package:health_demic/screens/Patient/patient_Home_Screen.dart';
 import '../../screens/Common/log_In_Screen.dart';
 
@@ -77,7 +79,9 @@ class MainDrawer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 50.sp),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(EditProfileScreen.routeName);
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_demic/screens/Patient/doctor_Recommender_Screen.dart';
 import 'package:health_demic/screens/Patient/find_a_Medicine_Screen.dart';
+import 'globals.dart';
 import 'widgets/Doctor Widgets/Practice_Form.dart';
 import 'screens/Common/log_In_Screen.dart';
 import 'screens/Common/sign_up_Screen.dart';
+import 'screens/Common/forget_Password_Screen.dart';
+import 'screens/Common/edit_Profile_Screen.dart';
 import 'screens/Patient/patient_Home_Screen.dart';
 import 'screens/Patient/mild_Diseases_Screen.dart';
 import 'screens/Patient/specific_Diseases_Screen.dart';
@@ -56,6 +59,7 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
+            scaffoldMessengerKey: snackbarKey,
             debugShowCheckedModeBanner: false,
             title: 'Health Demic',
             theme: ThemeData(
@@ -81,7 +85,10 @@ class MyApp extends StatelessWidget {
             routes: {
               '/': (context) => LogInScreen(),
               SignUpScreen.routeName: (context) => SignUpScreen(),
+              ForgetPasswordScreen.routeName: (context) =>
+                  const ForgetPasswordScreen(),
               PatientHomeScreen.routeName: (context) => PatientHomeScreen(),
+              EditProfileScreen.routeName: (context) => EditProfileScreen(),
               MildDiseaseScreen.routeName: (context) => MildDiseaseScreen(),
               SpecificDiseasesScreen.routeName: (context) =>
                   SpecificDiseasesScreen(),

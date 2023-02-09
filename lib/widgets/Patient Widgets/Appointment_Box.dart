@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_demic/widgets/Common%20Widgets/custom_Snackbar.dart';
 
 class AppointmentBox extends StatelessWidget {
   final String doctorImage;
@@ -78,10 +79,14 @@ class AppointmentBox extends StatelessWidget {
                     SizedBox(
                       width: 10.w,
                     ),
-                    Icon(
-                      Icons.delete,
-                      color: Colors.white,
-                    )
+                    IconButton(
+                        onPressed: () {
+                          customSnackBar('Appointment Deleted');
+                        },
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.white,
+                        ))
                   ]),
             )
           ]),

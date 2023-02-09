@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_demic/screens/Common/forget_Password_Screen.dart';
 import './sign_up_Screen.dart';
 import '../Patient/patient_Home_Screen.dart';
 import '../Doctor/doctor_Home_Screen.dart';
@@ -152,7 +153,10 @@ class _LogInScreenState extends State<LogInScreen> {
                 Align(
                   alignment: Alignment.center,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, ForgetPasswordScreen.routeName);
+                    },
                     child: Text(
                       'Forgetten Password?',
                       style: Theme.of(context).textTheme.titleSmall,

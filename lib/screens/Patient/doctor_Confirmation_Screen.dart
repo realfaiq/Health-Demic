@@ -28,8 +28,7 @@ class DoctorConfirmationScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: Theme.of(context).accentColor,
                 ),
-                child: Icon(Icons.confirmation_num,
-                    size: 100.sp, color: Colors.green),
+                child: Icon(Icons.done, size: 100.sp, color: Colors.blue),
                 alignment: Alignment.center,
               ),
               SizedBox(

@@ -50,21 +50,50 @@ class PatientHomeScreen extends StatelessWidget {
         children: [
           Padding(
               padding: EdgeInsets.all(20.sp),
-              child: Container(
-                height: 100.sp,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15.r)),
-                    color: Theme.of(context).primaryColor),
-                child: Center(
-                    child: Text(
-                  'Welcome Emily Rose',
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      color: Theme.of(context).accentColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.sp),
-                )),
+              // child: Container(
+              //   height: 100.sp,
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.all(Radius.circular(15.r)),
+              //       color: Theme.of(context).primaryColor),
+              //   child: Center(
+              //       child: Text(
+              //     'Welcome Emily Rose',
+              //     style: TextStyle(
+              //         fontFamily: 'Roboto',
+              //         color: Theme.of(context).accentColor,
+              //         fontWeight: FontWeight.bold,
+              //         fontSize: 20.sp),
+              //   )),
+              // )
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxWidth < 500) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(25.r)),
+                      child: Image.network(
+                        'https://img.freepik.com/free-vector/health-professional-team_52683-36024.jpg?w=996&t=st=1675972881~exp=1675973481~hmac=b99ee2f94200f5c41657abc5a5c584946d24655466a72318f982c18b23f7b045',
+                        fit: BoxFit.cover,
+                      ),
+                    );
+                  } else {
+                    return Container();
+                  }
+                },
               )),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.sp),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                'For You',
+                style: TextStyle(
+                    fontFamily: 'Robotot',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.sp,
+                    color: Colors.blue),
+              ),
+            ),
+          ),
           Expanded(
             child: LayoutBuilder(builder: (context, constraints) {
               if (constraints.maxWidth < 500) {
@@ -100,12 +129,12 @@ class PatientHomeScreen extends StatelessWidget {
                         'Manage Your Appointments',
                         Icons.manage_accounts,
                         ManageAppointmentsScreen.routeName),
-                    MobileBox(
-                        'blue',
-                        'Find a Medicine',
-                        'Track your medicines in pharmacies',
-                        Icons.search,
-                        FindAMedicineScreen.routeName),
+                    // MobileBox(
+                    //     'blue',
+                    //     'Find a Medicine',
+                    //     'Track your medicines in pharmacies',
+                    //     Icons.search,
+                    //     FindAMedicineScreen.routeName),
                   ],
                 );
               } else {
@@ -141,12 +170,12 @@ class PatientHomeScreen extends StatelessWidget {
                         'Manage Your Appointments',
                         Icons.manage_accounts,
                         ManageAppointmentsScreen.routeName),
-                    TabBox(
-                        'blue',
-                        'Find a Medicine',
-                        'Track your medicines in pharmacies',
-                        Icons.search,
-                        FindAMedicineScreen.routeName),
+                    // TabBox(
+                    //     'blue',
+                    //     'Find a Medicine',
+                    //     'Track your medicines in pharmacies',
+                    //     Icons.search,
+                    //     FindAMedicineScreen.routeName),
                   ],
                 );
               }
